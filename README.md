@@ -258,7 +258,57 @@ Appel de la fonction
 let variable = nomFonction(x1,x2, ...., x_n); //variable seulement si nomFonction a une valeur de retour obvious ! 
 ```
 ### Méthodes d'instance et champs 
+Les méthodes d'instance sont des méthodes qui vont agir via et sur l'instance concernée ... 
+Création d'une instance de classe 
+```
+class BankAccount{
+    constructor(owner, balance){
+        this.owner = owner; 
+        this.balance = balance; 
+    }
+    showBalance() {
+        console.log('Solde : ' + this.balance); 
+    }
+    deposit(amount){ //méthode qui ajoute la somme 
+        this.balance += amount; 
+        this.showBalance(); 
+    }
+    withdraw(amount){
+        if(amount <= this.balance){
+            this.balance -= amount; 
+            this.showBalance(); 
+        }
+        else{
+            console.log('Le retrait est impossible pour cause de montant insuffisant'); 
+        }
+    }
+}
+```
+Utilisation des instances de classe 
+```
+const olivier_account = new BankAccount('olivier', 500); 
+olivier_account.showBalance(); 
+olivier_account.deposit(50); 
+```
 
+Les méthodes statiques 
+
+Les méthodes statiques sont des méthodes qui peuvent être appelées sans passer par une instance de la classe mais par la classe elle-même. 
+
+
+Exemple d'utilisation de méthode statique 
+```
+let pi = Math.PI; 
+let arrondi = Math.round(nombre); 
+``` 
+Création d'une méthode statique 
+```
+class NomClasse{
+    static nom_methode(){
+        //some code 
+    }
+}
+```
 ### Créer ses fonctions 
 ### Tester une fonction 
 ### Déboguer sa fonction 
