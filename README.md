@@ -49,7 +49,7 @@ Les constantes
 * const ma_variable = valeur; 
 
 ### Les types de données 
-Les types primitifs
+Les types primitifs (qui sont passés par valeurs)
 * number (sous-types les int et les floats)
 * string 
 * boolean 
@@ -65,4 +65,75 @@ Pour les chaines de caractères
 Le typage est dynamique en JS 
 
 ### Les objets 
+#### Les objets (écriture en JSON = JavaScript Object Notation)
+Déclarer un objet littéral 
+```
+let monLivre = { //convention camelCase dans mon cas 
+    title : 'mon titre', 
+    author : 'nom prénom', 
+    number_of_pages : 300, 
+    is_available : true
+};
+```
+Récupérer la valeur (ou la changer)
+```
+monLivre.title //retourne 'mon titre' 
+monLivre.number_of_pages += 30; //on ajoute une préface
+```
+#### Manipuler les classes
 
+Créer une classe 
+```
+class MyBook {//convention CamelCase dans mon cas 
+    constructor(title, author, pages){ //un constructeur le plus simple du monde 
+        this.title = title; 
+        this.author = author; 
+        this.pages = pages; 
+    }
+}
+```
+Créer une instance 
+```
+const mon_livre = new MyBook('Le seigneur des anneaux', 'son autheur', 259); 
+```
+
+### Gérer la comple
+Index 
+* Les tableaux 
+* Les sets 
+* Les maps 
+
+#### Les tableaux 
+Création d'un tableau 
+```
+const mon_tableau = [valeur1, valeur2, ....]; //const car pointeur ... on peut avoir des types différents 
+```
+
+Accès/modification d'une case 
+```
+tableau[0] //la première valeur 
+tableau[tableau.length-1] //la dernière valeur 
+tableau[0] = nouvelle_valeur; 
+```
+
+Longueur du tableau 
+```
+tableau.length; //retourne la taille
+```
+
+Ajouter/Supprimer des éléments 
+* A la fin du tableau (mieux pour les performances)
+```
+    tableau.push(x1,x2,....,x_n); //ajout des valeurs à la fin du tableau 
+    tableau.pop(); //retire la dernière case du tableau 
+```
+* Au début du tableau 
+```
+    tableau.unshift(x1,x2, ...., x_n); 
+    tableau.shift(); 
+```
+
+#### Les sets 
+Je reviens dessus mais le tutoriel est à chier 
+#### Les maps 
+Equivalent d'un dictionnaire donc un ensemble clef-valeur 
