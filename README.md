@@ -1,6 +1,7 @@
 # Javascript-Personnal
 ## SDZ First Part 
 Index 
+[source] (https://openclassrooms.com/fr/courses/6175841-apprenez-a-programmer-avec-javascript)
 [table de compatibilité de ES6](https://kangax.github.io/compat-table/es6/)
 * Partie 1 : Les données et types de données 
     * Déclarer des variables 
@@ -32,6 +33,7 @@ Le nom d'une variable
 * convention de nommage camelCase ou camel_case (que je préfère)
 * caractères alphanumériques, sensible à la casse le $ et _ sont acceptés, doit commencer par une lettre 
 * pas de noms réservés (obvious)
+* le scope d'une variable avec let et const -> purement de type bloc !! (>< à var)
 
 Déclarer (et affecter une variable)
 * let nom_variable; //déclaration 
@@ -137,3 +139,48 @@ Ajouter/Supprimer des éléments
 Je reviens dessus mais le tutoriel est à chier 
 #### Les maps 
 Equivalent d'un dictionnaire donc un ensemble clef-valeur 
+
+## Partie 2 : Logique d'un programme en javascript 
+### La fonction main 
+Rien de majeur dans cette partie (on peut utiliser JS pour le front et le back) 
+Personnellement je vais commencer par une fonction main (histoire de limiter les variables globales) 
+
+### if ... et switch 
+#### Opérateurs de comparaison 
+* == et != (vérifie la valeur égalité)
+* === et !== (mieux : vérifie la valeur et le type donc pas de conversion implicite)
+* <, <= , >, >= 
+
+#### Opérateurs logiques 
+* && 
+* || 
+* ! 
+
+#### if else if else 
+```
+if(condition){
+    //come code 
+}else if (condition){
+    //some code 
+}else{
+    //some code 
+}
+```
+
+#### le switch 
+Attention le switch permet de faire uniquement un === sur plusieurs cas de figure 
+```
+switch(variable){
+    case 0: 
+        code; 
+        break; 
+    case 1: 
+        code; 
+        break; 
+    .... 
+    default :
+        code; 
+}
+```
+### Les boucles 
+### Erreurs et exceptions
