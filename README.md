@@ -183,4 +183,38 @@ switch(variable){
 }
 ```
 ### Les boucles 
+#### For
+```
+for(let i = 0, c = tableau.length; i < c; i++)
+{
+    tableau[i];
+}
+```
+
+#### For ... of et for ... in 
+```
+for (let i in tableau){
+    tableau[i]; 
+}
+```
+
+```
+for (let element of tableau) {
+    element; //idem donc pas besoin de calculer index mais on ne peut pas toucher à l'index dans ce cas de figgure
+}
+```
+#### While 
+```
+while(condition){
+    code; 
+    //incrémentation versus break ou continue 
+}
+```
+#### Do while
+```
+do{
+    code; 
+    //incrémentation versus break ou continue
+}while(condition); //sera forcément exécuté une fois puisque la condition apparait après le bloc 
+```
 ### Erreurs et exceptions
