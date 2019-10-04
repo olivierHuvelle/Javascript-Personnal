@@ -238,7 +238,27 @@ Remarque (va falloir que je cherche) il existe des architectures pour traquer et
 
 ## Partie 3 : Code propre et maintenable 
 ### Paramètres et valeurs de retour 
+Créer une fonction 
+* Première syntaxe (ancienne - à éviter donc)
+```
+function nomFonction(arg1, arg2, ..., arg_n){
+    //code 
+    //éventuellement un return 
+}
+```
+* Deuxième actuelle cette fois 
+```
+const nomFonction = (arg1, arg2, ...., arg_n) => {
+    //code 
+    //éventuellement un return 
+}
+```
+Appel de la fonction 
+```
+let variable = nomFonction(x1,x2, ...., x_n); //variable seulement si nomFonction a une valeur de retour obvious ! 
+```
 ### Méthodes d'instance et champs 
+
 ### Créer ses fonctions 
 ### Tester une fonction 
 ### Déboguer sa fonction 
