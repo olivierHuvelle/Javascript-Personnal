@@ -218,3 +218,28 @@ do{
 }while(condition); //sera forcément exécuté une fois puisque la condition apparait après le bloc 
 ```
 ### Erreurs et exceptions
+#### Les trois types d'erreur 
+Les 3 types d'erreur 
+* erreurs de syntaxe (easy ça plante et l'interpréteur le dit)
+* erreurs de logique (concentre moi gamin !)
+* erreurs d'exécution (exemple exception donne ton age -> bidonjour ?!)
+
+```
+try{
+    code à essayer
+}catch (error) {
+    //code si erreur 
+}
+```
+
+Remarque (va falloir que je cherche) il existe des architectures pour traquer et gérer les erreurs (ex les tests unitaires mais en mieux)
+
+
+
+## Partie 3 : Code propre et maintenable 
+### Paramètres et valeurs de retour 
+### Méthodes d'instance et champs 
+### Créer ses fonctions 
+### Tester une fonction 
+### Déboguer sa fonction 
+### La récursivité 
