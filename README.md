@@ -310,6 +310,53 @@ class NomClasse{
 }
 ```
 ### Créer ses fonctions 
+**Le** But des fonctions : DRY (Dont Repeat Yourself). 
+
+Une fonction = 1 résultat (donc si une fonction fait plus qu'une chose alors penser à en faire plusieurs avec des fonctions génériques)
+Autres règles d'or 
+* Commenter son code 
+* utiliser des noms clairs 
+* respecter une convention de nommage (dans mon cas camel_case pour les variables CamelCase pour les classes et camelCase pour les objets)
+
 ### Tester une fonction 
+**Importance du test** 
+il existe 3 types de tests 
+* Les tests unitaires 
+    * Vont tester des bouts de code (uniquement eux) typiquement des fonctions : test sur un cas simple et sur des cas limites 
+    * Un peu trop simple comme système il vaut mieux une architecture de test (un monde à part mais je vais faire une veille dessus) 
+* Les tests d'intégration 
+    * vérifier des ensembles de codes (et leurs interactions) bref un peu l'unitaire version 2.0
+* Les tests fonctionnels 
+    * La rolls : on vérifie l'application avec des scénarios complets. 
+    * Tests de bout en bout (E2E)
+
 ### Déboguer sa fonction 
+
+Tout un speech pour dire d'utiliser les outils de développement dans le navigateur (break-points, les scopes etc etc )
+
 ### La récursivité 
+Une fonction récursive est une fonction qui s'appelle elle-même tout simplement 
+
+Un exemple bien connu : la recherche binaire 
+```
+const binarySearch = (array, thingToFind, start, end) => {
+
+    if (start > end) {
+        return false;
+    }
+    
+    let mid = Math.floor((start + end) / 2);
+    
+    if (array[mid] === thingToFind) {
+        return true;
+    }
+    
+    if (thingToFind < array[mid]) {
+        // il faut rechercher dans la première moitié
+        return binarySearch(array, thingToFind, start, mid - 1); // on utilise (mid - 1) car on sait que l'on n'a pas besoin de l'élément mid, il a déjà été vérifié !
+    } else {
+        // il faut rechercher dans la deuxième moitié
+        return binarySearch(array, thingToFind, mid + 1, end);
+    }
+}
+```
