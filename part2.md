@@ -88,3 +88,46 @@ element.setAttribute('nom_attribut', 'valeur');
 ### Supprimer et remplacer 
 * parentNode.removeChild(child_to_remove); 
 * parentNode.replaceChild(new_child, former_child); 
+
+## Ecouter les événements 
+### Qu'est-ce qu'un événement 
+Merci captain obvious ... un événement est une réaction à une action émise par l'utilisateur 
+
+Un événement est représenté par un nom (ex click ou mouseover etc) et à une fonction (= callback). 
+**Par défaut un événement est propagé** transmission par bubbling (bulles enfants -> parent)
+
+### Réagir lors du clic 
+Exemple avec une fonction nommée 
+* element.addEventListener('click', onClick); 
+
+Exemple avec une fonction anonyme (que je préfère enfin faut voir les cas)
+```
+element.addEventListener('click', function(){
+    element.innerHTML = 'C est cliqué'; //wow original là ... 
+});
+```
+
+Prévenir les actions par défaut (ex redirection par un lien, soumission formulaire etc)
+```
+element.addEventListener('event_name', function(e){
+    e.preventDefault(); //on stop action par défaut 
+    e.stopPropagation(); //on stop la propagation bubbling (ou autre)
+})
+```
+
+## Récupérer des données utilisateur avec les événements 
+### Que sont les données liées aux événements 
+chaque événement implémente l'objet Event -> chaque événement a les mêmes méthodes et propriétés (ex preventDefault ou encore stopPropagation) 
+
+### Détecter le mouvement de la souris 
+événement mousemove , event de type MouseEvent , comprend entre autre 
+* clientX/clientY : position de la souris dans les coordonnées locales 
+* offsetX/offsetY : position de la souris % à l'élément sur lequel on écoute l'événement 
+* pageX, pageY : position de la souris % au document en entier 
+* screenX, screenY : position de la souris % à la fenêtre du navigateur 
+* movementX, movementY : position de la souris % à sa propre position lors du dernier événement mousemove (peut etre très pratique ça)
+* Lire la doc sur le sujet pour utiliser le canvas (et aussi le SVG)
+
+### Lire le contenu d'un champ texte 
+événement change (sur les input, select, textarea), attention l'événement est déclenché si la valeur a changé et que perdu le focus 
+// 
