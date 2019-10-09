@@ -129,5 +129,50 @@ chaque événement implémente l'objet Event -> chaque événement a les mêmes 
 * Lire la doc sur le sujet pour utiliser le canvas (et aussi le SVG)
 
 ### Lire le contenu d'un champ texte 
-événement change (sur les input, select, textarea), attention l'événement est déclenché si la valeur a changé et que perdu le focus 
-// 
+événement change (sur les input, select, textarea, checkbox, radio), attention l'événement est déclenché si la valeur a changé et que perdu le focus 
+Remarque ... on peut utiliser une fonction nommée avec event (pas lors de l'appel mais dans la déclaration)
+event.target.value 
+Si on ne veut pas attendre la perte du focus (comme dans change) -> event input 
+
+# Partie2 : Communiquer avec un service web 
+## Comprendre de qu'est un service web 
+**Introduction** 
+Un service est un programme qui s'exécute sur un serveur accessible , les demandes sont des requêtes 
+Pour permettre à des machines de communiquer -> protocoles 
+Différents protocoles selon les objectifs (ex FTP pour les transferts de fichier, HTTP pour le web etc SMTP et IMAP)
+
+**Protocole HTTP** 
+HTTP = HyperText Transfer Protocol : permet de communiquer sur le web (charger du HTML, CSS, polices, images etc etc)
+_Les codes HTTP_ 
+permettent de savoir ce qui s'est passé après une requête 
+* 1XX -> codes d'information , peu utilisés en pratique (à vérifier)
+* 2XX -> codes de succès 
+* 3XX -> codes de redirection (si ce que l'on cherche n'est plus présent)
+* 4XX -> codes d'erreurs liés à l'utilisation du service web (ressource inexistante, pas l'autorisation etc)
+* 5XX -> codes d'erreurs du service web 
+
+Les codes les plus fréquents 
+* 200 : tout OK 
+* 201 : tout OK et une ressource a été créée 
+* 204 : tout OK mais aucun résultat envoyé 
+* 400 : requête erronée 
+* 401 : problème identification (pas d'identification alors que nécessaire)
+* 403 : utilisateur n'a pas le droit d'accéder à cette ressource 
+* 404 : la ressource demandée n'existe pas 
+* 500 : le service a une erreur interne 
+
+_Les méthodes HTTP_ 
+Les principales méthodes 
+* GET : récupérer des ressources 
+* POST : créer ou modifier des ressources 
+* PUT : Modifier une ressource déjà créée 
+* DELETE  : ... 
+
+**Qu'est-ce qu'une API** 
+Ensemble de requêtes couvrant plein de fonctionnalités du site / application = API 
+API = Application Programming Interface (points d'accès vers les ressources de l'application). 
+EN général il y a une doc sur les API du service qui nous intéresse 
+## Récupérer des données d'un service web 
+
+## Valider les données saisies par les utilisateurs 
+## Sauvegarder des données sur un service web 
