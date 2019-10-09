@@ -172,6 +172,7 @@ Les principales méthodes
 Ensemble de requêtes couvrant plein de fonctionnalités du site / application = API 
 API = Application Programming Interface (points d'accès vers les ressources de l'application). 
 EN général il y a une doc sur les API du service qui nous intéresse 
+
 ## Récupérer des données d'un service web 
 
 ## Valider les données saisies par les utilisateurs 
